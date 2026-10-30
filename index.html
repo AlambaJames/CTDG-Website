@@ -29,7 +29,9 @@
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-emerald-500 selection:text-white">
 
+    <!-- ================================================================= -->
     <!--  CENTRAL DATA HUB: EDIT HERE TO AUTOMATICALLY UPDATE EVERYWHERE   -->
+    <!-- ================================================================= -->
     <script>
         const CTDG_DATA = {
             // 1. CONTACT DETAILS
@@ -39,26 +41,66 @@
                 location: "Jos North, Plateau State, Nigeria"
             },
 
-            // 2. SOCIAL MEDIA LINKS
+            // 2. SOCIAL MEDIA LINKS (UPDATED FROM YOUR IMAGE)
             socials: {
-                twitter: "https://x.com",
-                linkedin: "https://linkedin.com",
-                instagram: "https://instagram.com"
+                twitter: "https://x.com/closing_th50183",
+                linkedin: "https://www.linkedin.com/company/closing-the-divides-global/",
+                instagram: "https://www.instagram.com/closingthedividesglobal/",
+                substack: "https://substack.com/@closingthedividesglobal"
             },
 
-            // 3. WEBINARS & UPCOMING EVENTS
+            // 3. ANNOUNCEMENTS & OFFICIAL NOTICES
+            announcements: [
+                {
+                    badge: "PROGRAM LAUNCH",
+                    badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+                    title: "The Environmental and Health Pulse — Launching Soon",
+                    date: "OCT 30, 2026",
+                    content: "We are excited to unveil our upcoming initiative dedicated to tracking grassroots environmental indicators, sanitation trends, and public health risk factors across local communities."
+                },
+                {
+                    badge: "LAB LAUNCH",
+                    badgeColor: "bg-teal-500/20 text-teal-400 border-teal-500/30",
+                    title: "Evidence Lab — Launching Soon",
+                    date: "OCT 30, 2026",
+                    content: "Our upcoming operational research hub designed to bridge local field data with policy advocacy, training young researchers to generate actionable community evidence."
+                },
+                {
+                    badge: "URGENT NOTICE",
+                    badgeColor: "bg-amber-500/20 text-amber-400 border-amber-500/30",
+                    title: "November Webinar Date Poll Active",
+                    date: "Oct 29, 2026",
+                    content: "We are currently picking between Nov 14th or 15th for 'The Environment We Live In'. Please cast your vote in our community channel!"
+                },
+                {
+                    badge: "ANNIVERSARY",
+                    badgeColor: "bg-emerald-500/20 text-emerald-400 border-emerald-500/30",
+                    title: "CTDG 1st Anniversary Milestone",
+                    date: "Oct 25, 2026",
+                    content: "We are celebrating one year of grassroots environmental action and community public health empowerment across Plateau State."
+                },
+                {
+                    badge: "COMMUNITY LAB",
+                    badgeColor: "bg-teal-500/20 text-teal-400 border-teal-500/30",
+                    title: "Youth Impact Cohort Applications",
+                    date: "Oct 20, 2026",
+                    content: "Applications for the upcoming Youth Research & Data Analysis cohort will open next month. Stay tuned for details."
+                }
+            ],
+
+            // 4. WEBINARS & UPCOMING EVENTS
             webinars: [
                 {
                     title: "The Environment We Live In",
                     theme: "Theme: Understanding the Hidden Connections Between Environment and Health",
                     desc: "An insightful webinar exploring how surrounding environmental conditions directly shape community health, disease prevention, and public well-being.",
-                    date: "NOV 14 / 15, 2026",
+                    date: "NOV 14th, 2026",
                     tag: "Environmental Health",
-                    type: "Virtual Event / Online Stream",
-                    status: "Date Poll Active: 14th or 15th November",
+                    type: "Online Stream 7:30pm WAT",
+                    status: "Date Poll Active: 14th November",
                     actionText: "Register / RSVP",
                     actionSubject: "Poll Vote / RSVP: November Webinar"
-                },
+                }, 
                 {
                     title: "From Environment to Plate",
                     theme: "Theme: Connecting Environmental Health, Agriculture and Food Systems",
@@ -74,14 +116,13 @@
         };
     </script>
 
-    <!-- TOP HEADER / NAVBAR (STICKY & SEMI-TRANSPARENT WITH BLUR) -->
+    <!-- TOP HEADER / NAVBAR -->
     <header class="bg-slate-950/85 backdrop-blur-md border-b border-white/10 sticky top-0 z-40 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <!-- Brand Logo & Title -->
             <a href="#home" class="flex items-center gap-2.5 group">
                 <div class="w-9 h-9 rounded-xl overflow-hidden bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center shrink-0 group-hover:border-emerald-400 transition">
-                    <img src="public/CTDG logowithBG (2).jpeg" 
-                         alt="CTDG Logo" class="w-full h-full object-cover">
+                    <img src="public/CTDG logowithBG (2).jpeg" alt="CTDG Logo" class="w-full h-full object-cover">
                 </div>
                 <span class="text-emerald-400 font-extrabold text-base sm:text-lg tracking-tight group-hover:text-emerald-300 transition">
                     Closing The Divides Global
@@ -93,6 +134,7 @@
                 <a href="#home" class="hover:text-emerald-400 transition">Home</a>
                 <a href="#about" class="hover:text-emerald-400 transition">About</a>
                 <a href="#programs" class="hover:text-emerald-400 transition">Programs</a>
+                <a href="#announcements" class="hover:text-emerald-400 transition">Announcements</a>
                 <a href="#events" class="hover:text-emerald-400 transition">Events</a>
                 <a href="#contact" class="hover:text-emerald-400 transition">Contact</a>
             </nav>
@@ -103,7 +145,6 @@
                     Upcoming Events
                 </a>
 
-                <!-- Hamburger Button (Mobile Only) -->
                 <button onclick="toggleMobileDrawer()" class="md:hidden text-white p-2 focus:outline-none rounded-lg hover:bg-white/5 transition" aria-label="Toggle Navigation">
                     <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -115,12 +156,10 @@
 
     <!-- MOBILE NAVIGATION DRAWER -->
     <div id="mobile-drawer" class="fixed inset-0 bg-slate-950/95 backdrop-blur-xl z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col text-white overflow-y-auto">
-        <!-- Drawer Top Bar -->
         <div class="px-5 h-16 flex items-center justify-between border-b border-white/10 shrink-0">
             <div class="flex items-center gap-2.5">
                 <div class="w-8 h-8 rounded-lg overflow-hidden bg-emerald-600/20 border border-emerald-500/30 shrink-0">
-                    <img src="public/CTDG logowithBG (2).jpeg" 
-                         alt="CTDG Logo" class="w-full h-full object-cover">
+                    <img src="public/CTDG logowithBG (2).jpeg" alt="CTDG Logo" class="w-full h-full object-cover">
                 </div>
                 <span class="text-emerald-400 font-extrabold text-sm tracking-wide">CTDG Mobile Hub</span>
             </div>
@@ -129,79 +168,53 @@
             </button>
         </div>
 
-        <!-- Drawer Content -->
         <div class="p-5 space-y-6 flex-1">
-            <!-- Navigation Links -->
             <nav class="grid grid-cols-2 gap-3 text-sm font-semibold">
                 <a href="#home" onclick="toggleMobileDrawer()" class="bg-slate-900 border border-white/10 p-3 rounded-xl text-center hover:bg-emerald-500/20 hover:text-emerald-300 transition">Home</a>
                 <a href="#about" onclick="toggleMobileDrawer()" class="bg-slate-900 border border-white/10 p-3 rounded-xl text-center hover:bg-emerald-500/20 hover:text-emerald-300 transition">About</a>
                 <a href="#programs" onclick="toggleMobileDrawer()" class="bg-slate-900 border border-white/10 p-3 rounded-xl text-center hover:bg-emerald-500/20 hover:text-emerald-300 transition">Programs</a>
+                <a href="#announcements" onclick="toggleMobileDrawer()" class="bg-slate-900 border border-white/10 p-3 rounded-xl text-center hover:bg-emerald-500/20 hover:text-emerald-300 transition">Announcements</a>
                 <a href="#events" onclick="toggleMobileDrawer()" class="bg-slate-900 border border-white/10 p-3 rounded-xl text-center hover:bg-emerald-500/20 hover:text-emerald-300 transition">Events</a>
             </nav>
 
-            <!-- Mobile Drawer Events Preview Widget (DYNAMICALLY RENDERED) -->
             <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-4 space-y-3">
                 <div class="flex items-center justify-between border-b border-white/10 pb-2">
-                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2">
-                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                        </svg>
-                        Upcoming Webinars
-                    </span>
-                    <a href="#events" onclick="toggleMobileDrawer()" class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-semibold hover:bg-emerald-500/30 transition">
-                        View All
-                    </a>
+                    <span class="text-xs font-bold uppercase tracking-wider text-amber-400">Latest Notice</span>
+                    <a href="#announcements" onclick="toggleMobileDrawer()" class="text-[10px] bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded-full font-semibold">View All</a>
                 </div>
-                
-                <div id="drawer-events-container" class="space-y-2 text-xs">
-                    <!-- Loaded dynamically from CTDG_DATA -->
-                </div>
+                <div id="drawer-announcements-container" class="space-y-2 text-xs"></div>
             </div>
 
-            <!-- Direct Contact Widget (DYNAMICALLY RENDERED) -->
             <div class="bg-slate-900/90 border border-white/10 rounded-2xl p-4 space-y-3">
-                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-2 border-b border-white/10 pb-2">
-                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                    Get In Touch
-                </span>
-                <div id="drawer-contact-container" class="space-y-2 text-xs text-slate-300">
-                    <!-- Loaded dynamically from CTDG_DATA -->
+                <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                    <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Upcoming Webinars</span>
+                    <a href="#events" onclick="toggleMobileDrawer()" class="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-semibold">View All</a>
                 </div>
+                <div id="drawer-events-container" class="space-y-2 text-xs"></div>
             </div>
 
-            <!-- Social Media Channels (DYNAMICALLY RENDERED) -->
             <div class="space-y-2">
-                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block text-center">
-                    Follow CTDG
-                </span>
-                <div id="drawer-socials-container" class="flex justify-center items-center gap-3">
-                    <!-- Loaded dynamically from CTDG_DATA -->
-                </div>
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-400 block text-center">Follow CTDG</span>
+                <div id="drawer-socials-container" class="grid grid-cols-2 gap-2 text-xs"></div>
             </div>
         </div>
     </div>
 
     <!-- HERO SLIDESHOW SECTION -->
     <section id="home" class="relative h-[85vh] min-h-[500px] bg-slate-950 flex items-center overflow-hidden">
-        <!-- Slide 1 -->
         <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-100" style="z-index: 10;">
             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1600&q=80');"></div>
             <div class="absolute inset-0 bg-slate-950/75"></div>
         </div>
-        <!-- Slide 2 -->
         <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0" style="z-index: 0;">
             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=1600&q=80');"></div>
             <div class="absolute inset-0 bg-slate-950/75"></div>
         </div>
-        <!-- Slide 3 -->
         <div class="hero-slide absolute inset-0 transition-opacity duration-1000 opacity-0" style="z-index: 0;">
             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80');"></div>
             <div class="absolute inset-0 bg-slate-950/75"></div>
         </div>
 
-        <!-- Hero Content Overlay -->
         <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white space-y-6">
             <span class="inline-block bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-black uppercase tracking-widest px-3.5 py-1.5 rounded-full">
                 Environment • Health • Impact
@@ -226,7 +239,6 @@
     <!-- MISSION & VISION SECTION -->
     <section id="about" class="py-20 bg-white border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <!-- Section Title -->
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <span class="bg-teal-100 text-teal-800 border border-teal-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">
                     Who We Are
@@ -237,14 +249,10 @@
                 </p>
             </div>
 
-            <!-- Mission & Vision Cards Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Our Mission Card -->
                 <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 space-y-4 hover:shadow-md transition group">
                     <div class="w-12 h-12 bg-emerald-100 border border-emerald-200 text-emerald-700 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 transition">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A2 2 0 013 15.482V6a2 2 0 011.056-1.756l5-2.5a2 2 0 011.888 0l5 2.5A2 2 0 0117 6v9.482a2 2 0 01-1.056 1.756L10.5 20a2 2 0 01-1.5 0z"></path>
-                        </svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A2 2 0 013 15.482V6a2 2 0 011.056-1.756l5-2.5a2 2 0 011.888 0l5 2.5A2 2 0 0117 6v9.482a2 2 0 01-1.056 1.756L10.5 20a2 2 0 01-1.5 0z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900">Our Mission</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
@@ -252,13 +260,9 @@
                     </p>
                 </div>
 
-                <!-- Our Vision Card -->
                 <div class="bg-slate-50 border border-slate-200 rounded-2xl p-8 space-y-4 hover:shadow-md transition group">
                     <div class="w-12 h-12 bg-teal-100 border border-teal-200 text-teal-700 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 transition">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
-                        </svg>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                     </div>
                     <h3 class="text-xl font-bold text-slate-900">Our Vision</h3>
                     <p class="text-slate-600 text-sm leading-relaxed">
@@ -272,137 +276,108 @@
     <!-- 5 CORE PROGRAMS SECTION -->
     <section id="programs" class="py-20 bg-slate-100 text-slate-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <!-- Header -->
             <div class="text-center max-w-3xl mx-auto space-y-4">
                 <span class="bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">
                     Operational Pillars
                 </span>
                 <h2 class="text-3xl sm:text-4xl font-black tracking-tight text-slate-900">The 5 Core Programs</h2>
-                <p class="text-slate-600 text-sm sm:text-base">
-                    Comprehensive community-led initiatives designed for scalable grassroots impact across environmental health, research, and public policy.
-                </p>
             </div>
 
-            <!-- Program Grid Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Program 01 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-md transition">
                     <div class="h-44 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" 
-                             alt="Environmental Health" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" alt="Environmental Health" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-3 left-3 bg-teal-600 text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase">Program 01</span>
                     </div>
                     <div class="p-5 space-y-2">
                         <h3 class="font-bold text-slate-800 text-lg">Environmental Health & Climate Resilience</h3>
-                        <p class="text-xs font-semibold text-slate-500">Climate Action & Sanitation</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Mitigating environmental hazards, safeguarding water quality, and building climate-smart community structures.
-                        </p>
-                        <div class="text-xs bg-teal-50 p-2.5 rounded-lg border border-teal-100 font-medium text-teal-900 mt-2 flex items-center gap-2">
-                            <svg class="w-4 h-4 text-teal-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
-                            </svg>
-                            <span><strong>Outputs:</strong> Climate Assessments & Sanitation Drives.</span>
-                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">Mitigating environmental hazards, safeguarding water quality, and building climate-smart community structures.</p>
                     </div>
                 </div>
 
                 <!-- Program 02 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-md transition">
                     <div class="h-44 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" 
-                             alt="Public Health" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80" alt="Public Health" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-3 left-3 bg-teal-600 text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase">Program 02</span>
                     </div>
                     <div class="p-5 space-y-2">
                         <h3 class="font-bold text-slate-800 text-lg">Public Health & Disease Prevention</h3>
-                        <p class="text-xs font-semibold text-slate-500">Community Healthcare Outreach</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Executing grassroots health education, preventative screening initiatives, and sanitation outreach.
-                        </p>
-                        <div class="text-xs bg-teal-50 p-2.5 rounded-lg border border-teal-100 font-medium text-teal-900 mt-2 flex items-center gap-2">
-                            <svg class="w-4 h-4 text-teal-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
-                            <span><strong>Outputs:</strong> Health Screenings & Awareness Workshops.</span>
-                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">Executing grassroots health education, preventative screening initiatives, and sanitation outreach.</p>
                     </div>
                 </div>
 
                 <!-- Program 03 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-md transition">
                     <div class="h-44 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" 
-                             alt="Data & Evidence Lab" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=600&q=80" alt="Data & Evidence Lab" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-3 left-3 bg-teal-600 text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase">Program 03</span>
                     </div>
                     <div class="p-5 space-y-2">
                         <h3 class="font-bold text-slate-800 text-lg">Data & Evidence Lab</h3>
-                        <p class="text-xs font-semibold text-slate-500">Grassroots Research & Analytics</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Conducting field surveys, operational research, and translating raw impact data into actionable insights.
-                        </p>
-                        <div class="text-xs bg-teal-50 p-2.5 rounded-lg border border-teal-100 font-medium text-teal-900 mt-2 flex items-center gap-2">
-                            <svg class="w-4 h-4 text-teal-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                            </svg>
-                            <span><strong>Outputs:</strong> Community Datasets & Field Studies.</span>
-                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">Conducting field surveys, operational research, and translating raw impact data into actionable insights.</p>
                     </div>
                 </div>
 
                 <!-- Program 04 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-md transition">
                     <div class="h-44 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" 
-                             alt="Youth Impact Lab" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" alt="Youth Impact Lab" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-3 left-3 bg-teal-600 text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase">Program 04</span>
                     </div>
                     <div class="p-5 space-y-2">
                         <h3 class="font-bold text-slate-800 text-lg">CTDG Youth Impact Lab</h3>
-                        <p class="text-xs font-semibold text-slate-500">Youth Research, Skills & Leadership</p>
-                        <p class="text-xs text-slate-600 leading-relaxed">
-                            Equipping young people with research methods, survey design, data analysis, and investigative reporting tools.
-                        </p>
-                        <div class="text-xs bg-teal-50 p-2.5 rounded-lg border border-teal-100 font-medium text-teal-900 mt-2 flex items-center gap-2">
-                            <svg class="w-4 h-4 text-teal-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20.055a11.952 11.952 0 01-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
-                            </svg>
-                            <span><strong>Outputs:</strong> Trained Cohorts & Youth Portfolios.</span>
-                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">Equipping young people with research methods, survey design, data analysis, and investigative reporting tools.</p>
                     </div>
                 </div>
 
-                <!-- Program 05 (Spans 2 Columns on Desktop) -->
+                <!-- Program 05 -->
                 <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 group hover:shadow-md transition lg:col-span-2">
                     <div class="h-44 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" 
-                             alt="Community Solutions Lab" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Community Solutions Lab" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
                         <span class="absolute top-3 left-3 bg-emerald-600 text-white text-[10px] font-black px-2.5 py-1 rounded-md uppercase">Program 05</span>
                     </div>
                     <div class="p-5 space-y-2">
                         <h3 class="font-bold text-slate-800 text-lg">Community Solutions Lab</h3>
-                        <p class="text-xs font-semibold text-slate-500">Sustainable Livelihoods & Policy Advocacy</p>
-                        <p class="text-xs text-slate-600 leading-relaxed max-w-xl">
-                            Designing economic resilience initiatives and engaging stakeholders to advocate for equitable environmental and public health policies.
-                        </p>
-                        <div class="text-xs bg-emerald-50 p-2.5 rounded-lg border border-emerald-100 font-medium text-emerald-900 mt-2 flex items-center gap-2 max-w-md">
-                            <svg class="w-4 h-4 text-emerald-700 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                            </svg>
-                            <span><strong>Outputs:</strong> Policy Briefs & Local Resilience Plans.</span>
-                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed">Designing economic resilience initiatives and engaging stakeholders to advocate for equitable environmental and public health policies.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- UPCOMING WEBINARS & EVENTS SECTION (DESKTOP GRID RENDERED FROM CENTRAL DATA) -->
+    <!-- ================================================================= -->
+    <!--  MAIN PAGE SLIDING ANNOUNCEMENTS SECTION (SEMI-TRANSPARENT GLASS) -->
+    <!-- ================================================================= -->
+    <section id="announcements" class="py-16 bg-slate-900/80 backdrop-blur-md text-white border-t border-b border-white/10 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-amber-400">Official Notices</span>
+                    <h2 class="text-2xl sm:text-3xl font-black tracking-tight text-white">Latest Announcements</h2>
+                </div>
+                <div class="flex items-center gap-3">
+                    <span id="announcement-slide-counter" class="text-xs text-slate-400 font-mono bg-white/10 px-2.5 py-1 rounded-full">1/1</span>
+                    <div class="flex gap-1">
+                        <button onclick="prevMainAnnouncement()" class="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition text-slate-300 hover:text-white">&larr;</button>
+                        <button onclick="nextMainAnnouncement()" class="p-1.5 rounded-lg bg-white/10 hover:bg-white/20 transition text-slate-300 hover:text-white">&rarr;</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Page Sliding Content Window -->
+            <div class="relative overflow-hidden min-h-[140px] bg-slate-950/60 border border-white/10 rounded-2xl p-6 shadow-xl backdrop-blur-xl">
+                <div id="main-announcement-card" class="transition-all duration-500 ease-in-out transform translate-x-0 space-y-3">
+                    <!-- Loaded dynamically from CTDG_DATA -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- UPCOMING WEBINARS & EVENTS SECTION -->
     <section id="events" class="py-20 bg-white border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-            <!-- Section Title -->
             <div class="text-center max-w-3xl mx-auto space-y-3">
                 <span class="bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">
                     CTDG Webinars
@@ -413,23 +388,20 @@
                 </p>
             </div>
 
-            <!-- Events Grid Container -->
             <div id="desktop-events-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <!-- Rendered dynamically from CTDG_DATA -->
             </div>
         </div>
     </section>
 
-    <!-- FOOTER WITH INTEGRATED CONTACT INFORMATION -->
+    <!-- FOOTER -->
     <footer id="contact" class="bg-slate-950 text-slate-400 py-12 border-t border-white/10 text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-white/10">
-                <!-- Footer Brand Column -->
                 <div class="space-y-3">
                     <div class="flex items-center gap-2.5">
                         <div class="w-8 h-8 rounded-lg overflow-hidden bg-emerald-600/20 border border-emerald-500/30 shrink-0">
-                            <img src="public/CTDG logowithBG (2).jpeg" 
-                                 alt="CTDG Logo" class="w-full h-full object-cover">
+                            <img src="public/CTDG logowithBG (2).jpeg" alt="CTDG Logo" class="w-full h-full object-cover">
                         </div>
                         <span class="text-emerald-400 font-extrabold text-sm tracking-wide">Closing The Divides Global</span>
                     </div>
@@ -438,32 +410,31 @@
                     </p>
                 </div>
 
-                <!-- Footer Quick Links -->
                 <div class="space-y-3">
                     <h4 class="text-white font-bold text-xs uppercase tracking-wider">Quick Navigation</h4>
                     <ul class="space-y-2 text-xs">
                         <li><a href="#home" class="hover:text-emerald-400 transition">Home</a></li>
                         <li><a href="#about" class="hover:text-emerald-400 transition">About Our Mission</a></li>
                         <li><a href="#programs" class="hover:text-emerald-400 transition">5 Core Programs</a></li>
+                        <li><a href="#announcements" class="hover:text-emerald-400 transition">Latest Announcements</a></li>
                         <li><a href="#events" class="hover:text-emerald-400 transition">Upcoming Webinars</a></li>
                     </ul>
                 </div>
 
-                <!-- Footer Get In Touch Column (RENDERED DYNAMICALLY) -->
+                <!-- Footer Social Channels Column (REPLACED GET IN TOUCH) -->
                 <div class="space-y-3">
                     <h4 class="text-emerald-400 font-bold text-xs uppercase tracking-wider flex items-center gap-2">
                         <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
                         </svg>
-                        Get In Touch
+                        Follow Our Channels
                     </h4>
-                    <div id="footer-contact-container" class="space-y-2 text-xs text-slate-300">
+                    <div id="footer-socials-container" class="grid grid-cols-2 gap-2 text-xs">
                         <!-- Loaded dynamically from CTDG_DATA -->
                     </div>
                 </div>
             </div>
 
-            <!-- Bottom Copyright Bar -->
             <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500">
                 <p>© 2026 Closing The Divides Global (CTDG). All rights reserved.</p>
                 <p>Environment • Health • Impact</p>
@@ -471,9 +442,34 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT SYSTEM ENGINE -->
+    <!-- ================================================================= -->
+    <!--  BOTTOM SLIDING ANNOUNCEMENT TOAST POPUP WIDGET                   -->
+    <!-- ================================================================= -->
+    <div id="event-toast-widget" class="fixed bottom-4 right-4 left-4 sm:left-auto sm:w-96 z-50 transform translate-y-32 opacity-0 transition-all duration-500 ease-out">
+        <div class="bg-slate-900/95 border border-emerald-500/30 rounded-2xl p-4 shadow-2xl backdrop-blur-xl text-white space-y-3 relative overflow-hidden">
+            <div class="flex items-center justify-between border-b border-white/10 pb-2">
+                <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                    <span class="text-[10px] font-black uppercase tracking-widest text-amber-400">Official Announcement</span>
+                    <span id="toast-counter" class="text-[10px] bg-white/10 px-1.5 py-0.5 rounded text-slate-300 font-mono">1/1</span>
+                </div>
+                <button onclick="dismissToastWidget()" class="text-slate-400 hover:text-white p-1 text-lg font-bold leading-none focus:outline-none" aria-label="Close notification">&times;</button>
+            </div>
+
+            <div class="overflow-hidden min-h-[60px]">
+                <div id="toast-slide-content" class="transition-all duration-500 ease-in-out transform translate-x-0 space-y-1"></div>
+            </div>
+
+            <div class="w-full bg-slate-800 h-1 rounded-full overflow-hidden">
+                <div id="toast-progress-bar" class="bg-amber-400 h-full w-0 transition-all duration-[5000ms] linear"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================================================================= -->
+    <!--  JAVASCRIPT ENGINE                                               -->
+    <!-- ================================================================= -->
     <script>
-        // 1. Toggle Mobile Menu Drawer
         function toggleMobileDrawer() {
             const drawer = document.getElementById('mobile-drawer');
             if (drawer.classList.contains('translate-x-full')) {
@@ -485,7 +481,7 @@
             }
         }
 
-        // 2. Auto Hero Slideshow Rotation
+        // Hero Carousel Rotation
         let currentSlide = 0;
         const slides = document.querySelectorAll('.hero-slide');
         if (slides.length > 0) {
@@ -498,129 +494,205 @@
             }, 5000);
         }
 
-        // 3. CENTRALIZED DATA RENDER ENGINE (Populates Main Page + Drawer from CTDG_DATA)
-        function renderAllCentralData() {
-            // A. RENDER CONTACT INFO (BOTH FOOTER AND MOBILE DRAWER)
-            const contactHTML = `
-                <a href="mailto:${CTDG_DATA.contact.email}" class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-900 border border-white/5 hover:text-emerald-300 transition">
-                    <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                    </svg>
-                    <span>${CTDG_DATA.contact.email}</span>
-                </a>
-                <a href="tel:${CTDG_DATA.contact.phone.replace(/[^0-9+]/g, '')}" class="flex items-center gap-2.5 p-2 rounded-lg bg-slate-900 border border-white/5 hover:text-emerald-300 transition">
-                    <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                    </svg>
-                    <span>${CTDG_DATA.contact.phone}</span>
-                </a>
-            `;
-            const footerContact = document.getElementById('footer-contact-container');
-            const drawerContact = document.getElementById('drawer-contact-container');
-            if (footerContact) footerContact.innerHTML = contactHTML;
-            if (drawerContact) drawerContact.innerHTML = contactHTML;
+        // =================================================================
+        // MAIN PAGE SLIDING ANNOUNCEMENT CAROUSEL LOGIC
+        // =================================================================
+        let mainAnnounceIndex = 0;
+        let mainAnnounceInterval = null;
 
-            // B. RENDER SOCIAL MEDIA LINKS
-            const socialsHTML = `
-                <a href="${CTDG_DATA.socials.twitter}" target="_blank" rel="noopener" class="bg-slate-900 hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-400 border border-white/10 px-4 py-2 rounded-xl transition text-xs font-bold">
-                    X / Twitter
-                </a>
-                <a href="${CTDG_DATA.socials.linkedin}" target="_blank" rel="noopener" class="bg-slate-900 hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-400 border border-white/10 px-4 py-2 rounded-xl transition text-xs font-bold">
-                    LinkedIn
-                </a>
-                <a href="${CTDG_DATA.socials.instagram}" target="_blank" rel="noopener" class="bg-slate-900 hover:bg-emerald-500/20 text-slate-300 hover:text-emerald-400 border border-white/10 px-4 py-2 rounded-xl transition text-xs font-bold">
-                    Instagram
-                </a>
-            `;
-            const drawerSocials = document.getElementById('drawer-socials-container');
-            if (drawerSocials) drawerSocials.innerHTML = socialsHTML;
+        function showMainAnnouncementSlide(index) {
+            const container = document.getElementById('main-announcement-card');
+            const counter = document.getElementById('announcement-slide-counter');
+            if (!container || !CTDG_DATA.announcements[index]) return;
 
-            // C. RENDER WEBINARS / EVENTS (DESKTOP MAIN PAGE)
-            const desktopEventsGrid = document.getElementById('desktop-events-grid');
-            if (desktopEventsGrid) {
-                if (CTDG_DATA.webinars.length === 0) {
-                    desktopEventsGrid.innerHTML = `
-                        <div class="col-span-full bg-slate-50 border border-slate-200 p-8 rounded-2xl text-center text-slate-500">
-                            No upcoming webinars scheduled at the moment.
-                        </div>`;
-                } else {
-                    desktopEventsGrid.innerHTML = CTDG_DATA.webinars.map(item => `
-                        <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between">
-                            <div class="p-6 space-y-4">
-                                <div class="flex items-center justify-between gap-2">
-                                    <span class="bg-emerald-600 text-white text-xs font-extrabold px-3 py-1 rounded-lg shadow-sm">
-                                        ${item.date}
-                                    </span>
-                                    <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
-                                        ${item.tag}
-                                    </span>
-                                </div>
+            const item = CTDG_DATA.announcements[index];
 
-                                <div class="space-y-2">
-                                    <h3 class="font-bold text-slate-900 text-lg leading-snug">
-                                        ${item.title}
-                                    </h3>
-                                    <p class="text-xs font-semibold text-emerald-700">
-                                        ${item.theme}
-                                    </p>
-                                    <p class="text-xs text-slate-600 leading-relaxed">
-                                        ${item.desc}
-                                    </p>
-                                </div>
+            container.style.opacity = '0';
+            container.style.transform = 'translateX(-20px)';
 
-                                <div class="pt-2 border-t border-slate-200 space-y-2 text-xs text-slate-500">
-                                    <div class="flex items-center gap-2">
-                                        <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                        </svg>
-                                        <span>${item.type}</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <svg class="w-4 h-4 text-emerald-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                        </svg>
-                                        <span>${item.status}</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="px-6 pb-6 pt-2">
-                                <a href="mailto:${CTDG_DATA.contact.email}?subject=${encodeURIComponent(item.actionSubject)}" 
-                                   class="w-full inline-flex items-center justify-center gap-2 bg-slate-900 hover:bg-emerald-600 text-white text-xs font-bold py-2.5 px-4 rounded-xl transition">
-                                    <span>${item.actionText}</span>
-                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    `).join('');
-                }
-            }
-
-            // D. RENDER WEBINARS / EVENTS (MOBILE DRAWER WIDGET)
-            const drawerEventsContainer = document.getElementById('drawer-events-container');
-            if (drawerEventsContainer) {
-                if (CTDG_DATA.webinars.length === 0) {
-                    drawerEventsContainer.innerHTML = `
-                        <div class="bg-slate-950 p-3 rounded-xl border border-white/5 text-center text-slate-400 text-xs">
-                            No upcoming webinars scheduled right now.
-                        </div>`;
-                } else {
-                    drawerEventsContainer.innerHTML = CTDG_DATA.webinars.map(item => `
-                        <div class="bg-slate-950 p-2.5 rounded-xl border border-white/5 space-y-1">
-                            <div class="flex justify-between font-bold text-white text-xs">
-                                <span class="truncate max-w-[180px]">${item.title}</span>
-                                <span class="text-emerald-400 shrink-0 ml-2">${item.date}</span>
-                            </div>
-                            <p class="text-slate-400 text-[11px] line-clamp-2">${item.desc}</p>
-                        </div>
-                    `).join('');
-                }
-            }
+            setTimeout(() => {
+                container.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold uppercase px-2.5 py-1 rounded-full border ${item.badgeColor}">${item.badge}</span>
+                        <span class="text-xs text-slate-400 font-mono">${item.date}</span>
+                    </div>
+                    <h3 class="font-extrabold text-white text-lg tracking-tight">${item.title}</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed max-w-3xl">${item.content}</p>
+                `;
+                if (counter) counter.innerText = `${index + 1}/${CTDG_DATA.announcements.length}`;
+                container.style.opacity = '1';
+                container.style.transform = 'translateX(0)';
+            }, 250);
         }
 
-        // Initialize Data Render on Page Load
+        function startMainAnnouncementCycle() {
+            if (mainAnnounceInterval) clearInterval(mainAnnounceInterval);
+            if (CTDG_DATA.announcements.length <= 1) return;
+
+            mainAnnounceInterval = setInterval(() => {
+                mainAnnounceIndex = (mainAnnounceIndex + 1) % CTDG_DATA.announcements.length;
+                showMainAnnouncementSlide(mainAnnounceIndex);
+            }, 6000);
+        }
+
+        function nextMainAnnouncement() {
+            if (CTDG_DATA.announcements.length === 0) return;
+            mainAnnounceIndex = (mainAnnounceIndex + 1) % CTDG_DATA.announcements.length;
+            showMainAnnouncementSlide(mainAnnounceIndex);
+            startMainAnnouncementCycle();
+        }
+
+        function prevMainAnnouncement() {
+            if (CTDG_DATA.announcements.length === 0) return;
+            mainAnnounceIndex = (mainAnnounceIndex - 1 + CTDG_DATA.announcements.length) % CTDG_DATA.announcements.length;
+            showMainAnnouncementSlide(mainAnnounceIndex);
+            startMainAnnouncementCycle();
+        }
+
+        // =================================================================
+        // BOTTOM TOAST ANNOUNCEMENT POPUP LOGIC
+        // =================================================================
+        let toastIndex = 0;
+        let toastInterval = null;
+        let itemsShownCount = 0;
+
+        function initToastWidget() {
+            if (!CTDG_DATA.announcements || CTDG_DATA.announcements.length === 0) return;
+
+            setTimeout(() => {
+                const widget = document.getElementById('event-toast-widget');
+                if (widget) {
+                    widget.classList.remove('translate-y-32', 'opacity-0');
+                    widget.classList.add('translate-y-0', 'opacity-100');
+                    showToastSlide(0);
+                    startToastCycle();
+                }
+            }, 2000);
+        }
+
+        function showToastSlide(index) {
+            const container = document.getElementById('toast-slide-content');
+            const counter = document.getElementById('toast-counter');
+            const progressBar = document.getElementById('toast-progress-bar');
+            if (!container || !CTDG_DATA.announcements[index]) return;
+
+            const item = CTDG_DATA.announcements[index];
+
+            container.style.opacity = '0';
+            container.style.transform = 'translateX(-20px)';
+
+            setTimeout(() => {
+                container.innerHTML = `
+                    <div class="flex items-center justify-between text-xs gap-2">
+                        <span class="font-bold text-white text-sm line-clamp-1">${item.title}</span>
+                        <span class="text-amber-400 font-mono text-[10px] shrink-0">${item.date}</span>
+                    </div>
+                    <p class="text-[11px] text-slate-300 line-clamp-2">${item.content}</p>
+                `;
+                
+                if (counter) counter.innerText = `${index + 1}/${CTDG_DATA.announcements.length}`;
+
+                container.style.opacity = '1';
+                container.style.transform = 'translateX(0)';
+
+                if (progressBar) {
+                    progressBar.style.transition = 'none';
+                    progressBar.style.width = '0%';
+                    setTimeout(() => {
+                        progressBar.style.transition = 'width 5000ms linear';
+                        progressBar.style.width = '100%';
+                    }, 50);
+                }
+            }, 250);
+        }
+
+        function startToastCycle() {
+            if (toastInterval) clearInterval(toastInterval);
+            
+            toastInterval = setInterval(() => {
+                itemsShownCount++;
+                if (itemsShownCount >= CTDG_DATA.announcements.length) {
+                    dismissToastWidget();
+                    return;
+                }
+                toastIndex = (toastIndex + 1) % CTDG_DATA.announcements.length;
+                showToastSlide(toastIndex);
+            }, 5000);
+        }
+
+        function dismissToastWidget() {
+            const widget = document.getElementById('event-toast-widget');
+            if (widget) {
+                widget.classList.remove('translate-y-0', 'opacity-100');
+                widget.classList.add('translate-y-32', 'opacity-0');
+            }
+            if (toastInterval) clearInterval(toastInterval);
+        }
+
+        // =================================================================
+        // DYNAMIC RENDERER ENGINE
+        // =================================================================
+        function renderAllCentralData() {
+            // Render Socials (Footer & Drawer)
+            const socialsHTML = `
+                <a href="${CTDG_DATA.socials.twitter}" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-white/10 p-2 rounded-xl text-center text-slate-300 font-bold hover:bg-emerald-500/20 hover:text-emerald-300 transition">X (Twitter)</a>
+                <a href="${CTDG_DATA.socials.linkedin}" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-white/10 p-2 rounded-xl text-center text-slate-300 font-bold hover:bg-emerald-500/20 hover:text-emerald-300 transition">LinkedIn</a>
+                <a href="${CTDG_DATA.socials.instagram}" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-white/10 p-2 rounded-xl text-center text-slate-300 font-bold hover:bg-emerald-500/20 hover:text-emerald-300 transition">Instagram</a>
+                <a href="${CTDG_DATA.socials.substack}" target="_blank" rel="noopener noreferrer" class="bg-slate-900 border border-white/10 p-2 rounded-xl text-center text-slate-300 font-bold hover:bg-emerald-500/20 hover:text-emerald-300 transition">Substack</a>
+            `;
+            document.getElementById('footer-socials-container').innerHTML = socialsHTML;
+            document.getElementById('drawer-socials-container').innerHTML = socialsHTML;
+
+            // Mobile Drawer Announcements Notice
+            if (CTDG_DATA.announcements.length > 0) {
+                document.getElementById('drawer-announcements-container').innerHTML = `
+                    <div class="bg-slate-950 p-2.5 rounded-xl border border-white/5 space-y-1">
+                        <div class="flex justify-between font-bold text-white text-xs">
+                            <span>${CTDG_DATA.announcements[0].title}</span>
+                            <span class="text-amber-400">${CTDG_DATA.announcements[0].date}</span>
+                        </div>
+                        <p class="text-slate-400 text-[11px] line-clamp-2">${CTDG_DATA.announcements[0].content}</p>
+                    </div>
+                `;
+            }
+
+            // Render Events Grid
+            document.getElementById('desktop-events-grid').innerHTML = CTDG_DATA.webinars.map(item => `
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 flex flex-col justify-between shadow-sm hover:shadow-md transition">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-center">
+                            <span class="bg-emerald-600 text-white text-xs font-extrabold px-3 py-1 rounded-lg">${item.date}</span>
+                            <span class="bg-teal-100 text-teal-800 text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">${item.tag}</span>
+                        </div>
+                        <h3 class="font-bold text-slate-900 text-lg">${item.title}</h3>
+                        <p class="text-xs font-semibold text-emerald-700">${item.theme}</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">${item.desc}</p>
+                    </div>
+                    <div>
+                        <a href="mailto:${CTDG_DATA.contact.email}?subject=${encodeURIComponent(item.actionSubject)}" class="w-full inline-flex items-center justify-center bg-slate-900 hover:bg-emerald-600 text-white text-xs font-bold py-2.5 px-4 rounded-xl transition">
+                            ${item.actionText}
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+
+            // Drawer Events Preview
+            document.getElementById('drawer-events-container').innerHTML = CTDG_DATA.webinars.map(item => `
+                <div class="bg-slate-950 p-2.5 rounded-xl border border-white/5 space-y-1">
+                    <div class="flex justify-between font-bold text-white text-xs">
+                        <span>${item.title}</span>
+                        <span class="text-emerald-400">${item.date}</span>
+                    </div>
+                    <p class="text-slate-400 text-[11px]">${item.theme}</p>
+                </div>
+            `).join('');
+
+            // Start Main Page Sliding Carousel & Toast Popup
+            showMainAnnouncementSlide(0);
+            startMainAnnouncementCycle();
+            initToastWidget();
+        }
+
         document.addEventListener('DOMContentLoaded', renderAllCentralData);
     </script>
 </body>
