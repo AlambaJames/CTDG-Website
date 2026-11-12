@@ -41,7 +41,7 @@
                 location: "Jos North, Plateau State, Nigeria"
             },
 
-            // 2. SOCIAL MEDIA LINKS (UPDATED FROM YOUR IMAGE)
+            // 2. SOCIAL MEDIA LINKS
             socials: {
                 twitter: "https://x.com/closing_th50183",
                 linkedin: "https://www.linkedin.com/company/closing-the-divides-global/",
@@ -99,6 +99,7 @@
                     type: "Online Stream 7:30pm WAT",
                     status: "Date Poll Active: 14th November",
                     actionText: "Register / RSVP",
+                    actionUrl: "https://forms.gle/S7YXGq2iaMKUVeD37",
                     actionSubject: "Poll Vote / RSVP: November Webinar"
                 }, 
                 {
@@ -656,7 +657,7 @@
                 `;
             }
 
-            // Render Events Grid
+            // Render Events Grid (Main Page) - supports direct form URLs
             document.getElementById('desktop-events-grid').innerHTML = CTDG_DATA.webinars.map(item => `
                 <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 space-y-4 flex flex-col justify-between shadow-sm hover:shadow-md transition">
                     <div class="space-y-3">
@@ -669,21 +670,30 @@
                         <p class="text-xs text-slate-600 leading-relaxed">${item.desc}</p>
                     </div>
                     <div>
-                        <a href="mailto:${CTDG_DATA.contact.email}?subject=${encodeURIComponent(item.actionSubject)}" class="w-full inline-flex items-center justify-center bg-slate-900 hover:bg-emerald-600 text-white text-xs font-bold py-2.5 px-4 rounded-xl transition">
+                        <a href="${item.actionUrl ? item.actionUrl : `mailto:${CTDG_DATA.contact.email}?subject=${encodeURIComponent(item.actionSubject)}`}" 
+                           ${item.actionUrl ? 'target="_blank" rel="noopener noreferrer"' : ''} 
+                           class="w-full inline-flex items-center justify-center bg-slate-900 hover:bg-emerald-600 text-white text-xs font-bold py-2.5 px-4 transition">
                             ${item.actionText}
                         </a>
                     </div>
                 </div>
             `).join('');
 
-            // Drawer Events Preview
+            // Drawer Events Preview (Mobile Drawer)
             document.getElementById('drawer-events-container').innerHTML = CTDG_DATA.webinars.map(item => `
-                <div class="bg-slate-950 p-2.5 rounded-xl border border-white/5 space-y-1">
-                    <div class="flex justify-between font-bold text-white text-xs">
-                        <span>${item.title}</span>
-                        <span class="text-emerald-400">${item.date}</span>
+                <div class="bg-slate-950 p-2.5 rounded-xl border border-white/5 space-y-2">
+                    <div class="space-y-1">
+                        <div class="flex justify-between font-bold text-white text-xs">
+                            <span>${item.title}</span>
+                            <span class="text-emerald-400">${item.date}</span>
+                        </div>
+                        <p class="text-slate-400 text-[11px]">${item.theme}</p>
                     </div>
-                    <p class="text-slate-400 text-[11px]">${item.theme}</p>
+                    <a href="${item.actionUrl ? item.actionUrl : `mailto:${CTDG_DATA.contact.email}?subject=${encodeURIComponent(item.actionSubject)}`}" 
+                       ${item.actionUrl ? 'target="_blank" rel="noopener noreferrer"' : ''} 
+                       class="block text-center bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 text-[11px] font-bold py-1.5 rounded-lg transition">
+                        ${item.actionText}
+                    </a>
                 </div>
             `).join('');
 
